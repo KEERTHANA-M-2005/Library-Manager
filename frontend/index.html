@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <h1>📚 Library Manager</h1>
+    <p class="subtitle">FastAPI + MySQL</p>
+
+    <!-- STEP 1: ADD BOOK -->
+    <div class="card active" id="step-book">
+        <h2>Step 1 · Add Book</h2>
+        <input id="title" placeholder="Book Title">
+        <input id="year" type="number" placeholder="Published Year">
+        <button onclick="goToAuthor()">Next → Add Author</button>
+    </div>
+
+    <!-- STEP 2: ADD AUTHOR -->
+    <div class="card" id="step-author">
+        <h2>Step 2 · Add Author</h2>
+        <input id="authorName" placeholder="Author Name">
+        <button onclick="submitBook()">Add Book</button>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="card success" id="success">
+        <h2>✅ Book Added</h2>
+        <p>Your book was added successfully.</p>
+        <button onclick="resetForm()">Add Another Book</button>
+    </div>
+
+    <!-- VIEW BOOKS -->
+    <div class="card active" id="view-books">
+        <h2>📖 View Books</h2>
+        <button onclick="loadBooks()">Show All Books</button>
+        <ul id="bookList"></ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

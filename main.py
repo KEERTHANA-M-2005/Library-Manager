@@ -1,8 +1,19 @@
 from fastapi import FastAPI, HTTPException
 from sqlalchemy import text
 from database import engine
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI(title="Library Manager API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # ---------------------------
 # Add Author
